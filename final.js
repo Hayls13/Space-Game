@@ -715,7 +715,7 @@ p.nominalBounds = new cjs.Rectangle(-110,-14.9,245.5,294.2);
 		
 			Character.prototype.hitGround = function () {
 				if (this.state == Character.ALIVE){
-					createjs.Sound.play("hit");
+					createjs.Sound.play("point");
 					}
 				this.state = Character.DEAD;
 				this.mc.stop();
@@ -725,7 +725,7 @@ p.nominalBounds = new cjs.Rectangle(-110,-14.9,245.5,294.2);
 				if(this.state == Character.ALIVE){
 					this.state = Character.DYING;
 					this.velocity = 0;
-					createjs.Sound.play("hit");
+					createjs.Sound.play("point");
 				}
 			}
 			
@@ -875,7 +875,7 @@ p.nominalBounds = new cjs.Rectangle(-110,-14.9,245.5,294.2);
 			this.ui = new UI();
 			this.score = 0;
 			
-			//this.registerSound();
+			this.registerSound();
 			
 			canvas.onmousedown = this.userPressed.bind(this);
 			window.onkeydown = this.userPressed.bind(this);
@@ -918,7 +918,7 @@ p.nominalBounds = new cjs.Rectangle(-110,-14.9,245.5,294.2);
 		
 		
 		
-		var main = new Main();
+		
 		
 		
 		Main.prototype.checkForCharacterCollidingWithGround = function(){
@@ -966,7 +966,7 @@ p.nominalBounds = new cjs.Rectangle(-110,-14.9,245.5,294.2);
 		Main.prototype.scoredPoint = function(){
 			this.score++;
 			this.ui.updateScore(this.score);
-			createjs.Sound.play("point");
+			createjs.Sound.play("hit");
 		}
 		
 		Main.prototype.registerSound = function(){
@@ -974,6 +974,9 @@ p.nominalBounds = new cjs.Rectangle(-110,-14.9,245.5,294.2);
 			createjs.Sound.registerSound("flap.wav", "flap");
 			createjs.Sound.registerSound("hit.wav", "hit");
 		}
+		
+		
+		var main = new Main();
 	}
 
 	// actions tween:
