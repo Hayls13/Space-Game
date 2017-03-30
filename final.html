@@ -13,6 +13,14 @@
 <meta name="authoring-tool" content="Adobe_Animate_CC">
 <title>final</title>
 <!-- write your code here -->
+<style>
+  #canvas, #_preload_div_ {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+</style>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="final.js"></script>
 <script>
@@ -23,6 +31,9 @@ function init() {
 }
 function handleComplete() {
 	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
 	exportRoot = new lib._final();
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);	
@@ -55,18 +66,19 @@ function handleComplete() {
 			}			
 			canvas.width = w*pRatio*sRatio;			
 			canvas.height = h*pRatio*sRatio;
-			canvas.style.width = w*sRatio+'px';			
-			canvas.style.height = h*sRatio+'px';
+			canvas.style.width = preloaderDiv.style.width = w*sRatio+'px';			
+			canvas.style.height = preloaderDiv.style.height = h*sRatio+'px';
 			stage.scaleX = pRatio*sRatio;			
 			stage.scaleY = pRatio*sRatio;			
 			lastW = iw; lastH = ih; lastS = sRatio;		
 		}
-	})(false,'both',false,1);	
+	})(true,'both',false,1);	
 }
 </script>
 <!-- write your code here -->
 </head>
 <body onload="init();" style="margin:0px;">
-	<canvas id="canvas" width="300" height="400" style="display: block; background-color:rgba(255, 255, 255, 1.00)"></canvas>
+	<canvas id="canvas" width="300" height="400" style="display: none; background-color:rgba(255, 255, 255, 1.00)"></canvas>
+    <div id='_preload_div_' style='display: inline-block; height:400px; width: 300px; vertical-align=middle;position:absolute;text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
 </body>
 </html>
