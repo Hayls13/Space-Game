@@ -26,12 +26,12 @@
   <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0"/>
   <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1"/>
   <platform name="android">
-    <icon src="www/res/icon/android/Artboard-1ldpi.png" density="ldpi"/>
-    <icon src="www/res/icon/android/Artboard-1mdpi.png" density="mdpi"/>
-    <icon src="www/res/icon/android/Artboard-1hdpi.png" density="hdpi"/>
-    <icon src="www/res/icon/android/Artboard-1xhdpi.png" density="xhdpi"/>
-    <icon src="www/res/icon/android/Artboard-1xxhdpi.png" density="xxhdpi"/>
-    <icon src="www/res/icon/android/Artboard-1xxxhdpi.png" density="xxxhdpi"/>
+    <icon src="Artboard-1ldpi.png" density="ldpi"/>
+    <icon src="Artboard-1mdpi.png" density="mdpi"/>
+    <icon src="Artboard-1hdpi.png" density="hdpi"/>
+    <icon src="Artboard-1xhdpi.png" density="xhdpi"/>
+    <icon src="Artboard-1xxhdpi.png" density="xxhdpi"/>
+    <icon src="Artboard-1xxxhdpi.png" density="xxxhdpi"/>
     <splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/>
     <splash src="www/res/screen/android/drawable-land-mdpi-screen.png" density="land-mdpi"/>
     <splash src="www/res/screen/android/drawable-land-hdpi-screen.png" density="land-hdpi"/>
